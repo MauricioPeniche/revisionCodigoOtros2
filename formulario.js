@@ -1,17 +1,19 @@
-var formulario = document.querySelector("#invitadoForm"); // Cambia "#form" por "#invitadoForm"
+// Nota: es preferible usar let o const en lugar de var para declarar una variable, sin embargo usar var no es necesariamente incorrecto, solo anticuado.
+
+let formulario = document.querySelector("#invitadoForm"); // Se cambia "#form" por "#invitadoForm"
 
 formulario.onsubmit = function(e) {
-  e.preventDefault(); // Corrige el método para prevenir el envío del formulario
+  e.preventDefault(); // Se corrige el método para prevenir el envío del formulario
 
-  var n = formulario.elements[0];
-  var e = formulario.elements[1];
-  var na = formulario.elements[2];
+  let n = formulario.elements[0];
+  let e = formulario.elements[1];
+  let na = formulario.elements[2];
 
-  var nombre = n.value;
-  var edad = e.value;
+  let nombre = n.value;
+  let edad = e.value;
 
-  var i = na.selectedIndex;
-  var nacionalidad = na.options[i].value;
+  let i = na.selectedIndex;
+  let nacionalidad = na.options[i].value;
   console.log(nombre, edad);
   console.log(nacionalidad);
 
@@ -22,21 +24,19 @@ formulario.onsubmit = function(e) {
     e.classList.add("error");
   }
 
-  if (nombre.length > 0 && (edad >= 18 && edad <= 120)) { // Asegura que la edad sea inclusiva
+  if (nombre.length > 0 && (edad >= 18 && edad <= 120)) { // Se asegura que la edad sea inclusiva
     agregarInvitado(nombre, edad, nacionalidad);
   }
 };
 
-// ... El resto del código sin cambios ...
 
-// Cambia "lista-de-invitados" por "listaInvitados"
-var lista = document.getElementById("listaInvitados");
+// Se cambia "lista-de-invitados" por "listaInvitados" para camelCase
+const lista = document.getElementById("listaInvitados");
 
-// Cambia "elemento-lista" por "elementoLista"
+// Se cambia "elemento-lista" por "elementoLista" para hacer uso de camelCase
 elementoLista.classList.add("elementoLista");
-
-// ... El resto del código sin cambios ...
 
 botonBorrar.onclick = function() {
   botonBorrar.parentNode.remove();
 };
+
